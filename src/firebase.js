@@ -45,8 +45,18 @@ const signInWithGoogle = async () => {
       });
     }
   } catch (err) {
-    console.error(err);
-    alert(err.message);
+    if (err.code === "auth/permission-denied") {
+      alert(
+        "You do not have sufficient permissions to access this feature. Please contact the administrator."
+      );
+    } else if (err.code === "auth/unauthorized-domain") {
+      alert(
+        "This domain is not authorized to access the Firebase project. Please check your Firebase configuration."
+      );
+    } else {
+      console.error(err);
+      alert("An error occurred: " + err.message);
+    }
   }
 };
 

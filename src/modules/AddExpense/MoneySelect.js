@@ -82,14 +82,18 @@ const MoneySelect = () => {
   };
 
   const handleAdd = useCallback(() => {
-    const newDataObject = { ...data, id: uuidv4() };
-    setNewData((prevData) => [...prevData, newDataObject]);
-    localStorage.setItem(
-      "newData",
-      JSON.stringify([...newData, newDataObject])
-    );
-    setData({ payment: "", amount: "" });
-    navigate("/");
+    if (data.amount.length > 0 && data.payment.length > 0) {
+      const newDataObject = { ...data, id: uuidv4() };
+      setNewData((prevData) => [...prevData, newDataObject]);
+      localStorage.setItem(
+        "newData",
+        JSON.stringify([...newData, newDataObject])
+      );
+      setData({ payment: "", amount: "" });
+      navigate("/");
+    } else {
+      alert("payment and amount field required");
+    }
   }, [data, newData, navigate]);
 
   return (
