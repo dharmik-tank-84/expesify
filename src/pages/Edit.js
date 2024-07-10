@@ -115,6 +115,7 @@ const Edit = () => {
                     labelId="demo-simple-select-helper-label"
                     id="demo-simple-select-helper"
                     name="payment"
+                    autoComplete="off"
                     label="Payment"
                     value={editData.payment}
                     onChange={(e) => handleChange(e)}
@@ -135,6 +136,7 @@ const Edit = () => {
                   fullWidth
                   variant="outlined"
                   name="amount"
+                  autoComplete="off"
                   value={editData.amount}
                   onChange={(e) => handleChange(e)}
                 />
@@ -144,6 +146,7 @@ const Edit = () => {
                   fullWidth
                   variant="outlined"
                   name="description"
+                  autoComplete="off"
                   value={editData.description}
                   onChange={(e) => handleChange(e)}
                 />

@@ -105,6 +105,7 @@ const MoneySelect = () => {
               id="demo-simple-select-helper"
               name="payment"
               label="Payment"
+              autoComplete="off"
               value={data.payment}
               onChange={(e) => handleChange(e)}
               MenuProps={MenuProps}
@@ -121,6 +122,7 @@ const MoneySelect = () => {
             type="number"
             fullWidth
             variant="outlined"
+            autoComplete="off"
             name="amount"
             value={data.amount}
             onChange={(e) => handleChange(e)}
@@ -131,6 +133,7 @@ const MoneySelect = () => {
             fullWidth
             variant="outlined"
             name="description"
+            autoComplete="off"
             value={data.description}
             onChange={(e) => handleChange(e)}
           />
