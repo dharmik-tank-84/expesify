@@ -15,6 +15,16 @@ import { useNavigate } from "react-router-dom";
 const SideBar = ({ isOpen, closeDrawer }) => {
   let navigate = useNavigate();
 
+  const handleRecentExpense = () => {
+    navigate("*/recent-expense");
+    closeDrawer();
+  };
+
+  const handleTotalExpense = () => {
+    navigate("*/total-expense");
+    closeDrawer();
+  };
+
   return (
     <>
       <Drawer anchor="left" open={isOpen}>
@@ -28,9 +38,17 @@ const SideBar = ({ isOpen, closeDrawer }) => {
           <Typography
             variant="h5"
             sx={{ cursor: "pointer" }}
-            onClick={() => navigate("*/recent-expense")}
+            onClick={handleRecentExpense}
           >
             Recent Expense
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{ cursor: "pointer", mt: "15px" }}
+            // onClick={() => navigate("*/recent-expense")}
+            onClick={handleTotalExpense}
+          >
+            Total Expense
           </Typography>
         </Box>
       </Drawer>

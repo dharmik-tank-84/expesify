@@ -13,7 +13,7 @@ import {
 
 // ! import react-router-dom
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const RecentExpense = () => {
   let [lastData, setLastData] = useState();

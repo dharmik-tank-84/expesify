@@ -20,6 +20,7 @@ import Profile from "../../pages/Profile";
 import Read from "../../pages/Read";
 import Edit from "../../pages/Edit";
 import RecentExpense from "../../pages/RecentExpense";
+import TotalExpense from "../../pages/TotalExpense";
 
 const Router = () => {
   const [user, loading] = useAuthState(auth);
@@ -72,6 +73,7 @@ const Router = () => {
         <Route exact path="*/read/:id" element={<Read />} />
         <Route exact path="*/edit/:id" element={<Edit />} />
         <Route exact path="*/recent-expense" element={<RecentExpense />} />
+        <Route exact path="*/total-expense" element={<TotalExpense />} />
       </Routes>
     </>
   );
